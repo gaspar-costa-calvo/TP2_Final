@@ -1,8 +1,9 @@
 import { Router } from "express";
-import palabraRouter from "./palabraRouter.js";
+import sondaRouter from "./sondasRoutes.js";
+
 
 const router = Router();
-router.use("/palabra", palabraRouter);
+router.use("/sondas", sondaRouter);
 
 
 
