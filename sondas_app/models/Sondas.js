@@ -38,7 +38,7 @@ class Sonda{
   }
 
   getById = async (id) =>{
-    if (this.validateId(id)) {
+    if (!this.validateId(id)) {
         throw {
             message: "Número de sonda incorrecto"
         }
@@ -53,14 +53,14 @@ class Sonda{
       throw "datos no válidos cargando temp"
     }
 
-    medicion = {
-        temperatura: temperatura,
-        fecha: moment().format('MMMM Do YYYY, h:mm:ss a')
-    }
-    
     let sonda = await this.getById(id) 
-    
-    return await sonda.registroTemperaturas.push(medicion);
+   
+    return await sonda.registroTemperaturas.push(
+        {
+            temperatura,
+            date: moment().format('MMMM Do YYYY, h:mm:ss a')
+        }
+    );
   }
 }
   export default Sonda

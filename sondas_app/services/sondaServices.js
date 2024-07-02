@@ -14,7 +14,7 @@ getAllSondasService = async() =>{
 
 getSondaByIdService = async(id) =>{
   try {
-
+ 
     return this.sondaModel.getById(id)
   } catch (error) {    
     throw error;
@@ -23,7 +23,7 @@ getSondaByIdService = async(id) =>{
 
 cargarTemperatura = async(id, temperatura) =>{
   try {
-
+  
     return await this.sondaModel.cargarTemperatura(id, temperatura)
 
   } catch (error) {
